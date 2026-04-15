@@ -24,8 +24,7 @@ from omni.isaac.lab_quadruped_tasks.cfg.quadruped_terrains_cfg import (
 )
 
 # ---------------------------------------------------------------------------
-# Lite3 ArticulationCfg
-# USD lives alongside the rl_training deep_robotics_model assets.
+# Lite3 ArticulationCfg  (Deep Robotics Lite3)
 # ---------------------------------------------------------------------------
 
 LITE3_USD_PATH = (
@@ -101,13 +100,13 @@ class Lite3BaseEnvCfg(QuadrupedEnvCfg):
         # Robot
         self.scene.robot = DEEPROBOTICS_LITE3_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
 
-        # Height scanner sits on the robot torso
+        # Height scanner sits on the robot torso (Lite3 uses "TORSO", not "base")
         self.scene.height_scanner.prim_path = "{ENV_REGEX_NS}/Robot/TORSO"
 
-        # Action scale (conservative – similar to Go2)
+        # Action scale
         self.actions.joint_pos.scale = 0.2
 
-        # Rewards – tune body names to Lite3 link naming
+        # Override body names to match Lite3 link naming (uppercase)
         self.rewards.rew_feet_air_time.params["sensor_cfg"] = SceneEntityCfg(
             "contact_forces", body_names=".*_FOOT"
         )
@@ -124,21 +123,18 @@ class Lite3BaseEnvCfg(QuadrupedEnvCfg):
             "robot", joint_names=[".*"]
         )
 
+        self.terminations.base_contact.params["sensor_cfg"] = SceneEntityCfg(
+            "contact_forces", body_names="TORSO"
+        )
+        self.events.add_base_mass.params["asset_cfg"] = SceneEntityCfg(
+            "robot", body_names="TORSO"
+        )
+
+        # Reward weights (tuned for Lite3 — same as Go2 baseline)
         self.rewards.rew_feet_air_time.weight = 0.75
         self.rewards.pen_joint_powers.weight = -3e-3
         self.rewards.pen_joint_deviation.weight = -0.1
         self.rewards.pen_undesired_contacts.weight = -0.25
-
-        # Termination – use TORSO as the base body
-        self.terminations.base_contact.params["sensor_cfg"] = SceneEntityCfg(
-            "contact_forces", body_names="TORSO"
-        )
-
-        # Domain randomisation – add_base_mass targets TORSO
-        self.events.add_base_mass.params["asset_cfg"] = SceneEntityCfg(
-            "robot", body_names="TORSO"
-        )
-        self.events.add_base_mass.params["mass_distribution_params"] = (-1.0, 2.0)
 
 
 @configclass
@@ -230,7 +226,6 @@ class Lite3BlindStairsEnvCfg(Lite3BaseEnvCfg):
         self.scene.height_scanner = None
         self.observations.policy.height_map = None
 
-        # Stairs: forward-only commands, no lateral drift
         self.commands.base_velocity.ranges.lin_vel_x = (0.5, 1.0)
         self.commands.base_velocity.ranges.lin_vel_y = (0.0, 0.0)
         self.commands.base_velocity.ranges.ang_vel_z = (-math.pi / 6, math.pi / 6)
@@ -239,6 +234,7 @@ class Lite3BlindStairsEnvCfg(Lite3BaseEnvCfg):
 
         self.scene.terrain.terrain_type = "generator"
         self.scene.terrain.terrain_generator = STAIRS_TERRAINS_CFG
+        self.scene.env_spacing = 8.0
 
         self.viewer.origin_type = "env"
 
@@ -260,10 +256,11 @@ class Lite3BlindStairsEnvCfg_PLAY(Lite3BaseEnvCfg_PLAY):
         self.scene.terrain.terrain_type = "generator"
         self.scene.terrain.max_init_terrain_level = None
         self.scene.terrain.terrain_generator = STAIRS_TERRAINS_PLAY_CFG
+        self.scene.env_spacing = 8.0
 
 
 # ---------------------------------------------------------------------------
-# Lite3 Vision (height-map + full terrain curriculum)
+# Lite3 Vision (height-map)
 # ---------------------------------------------------------------------------
 
 
@@ -312,6 +309,7 @@ class Lite3VisionStairsEnvCfg(Lite3BaseEnvCfg):
 
         self.scene.terrain.terrain_type = "generator"
         self.scene.terrain.terrain_generator = STAIRS_TERRAINS_CFG
+        self.scene.env_spacing = 8.0
 
         self.viewer.origin_type = "env"
 
@@ -330,5 +328,6 @@ class Lite3VisionStairsEnvCfg_PLAY(Lite3BaseEnvCfg_PLAY):
         self.scene.terrain.terrain_type = "generator"
         self.scene.terrain.max_init_terrain_level = None
         self.scene.terrain.terrain_generator = STAIRS_TERRAINS_PLAY_CFG
+        self.scene.env_spacing = 8.0
 
         self.viewer.origin_type = "env"
