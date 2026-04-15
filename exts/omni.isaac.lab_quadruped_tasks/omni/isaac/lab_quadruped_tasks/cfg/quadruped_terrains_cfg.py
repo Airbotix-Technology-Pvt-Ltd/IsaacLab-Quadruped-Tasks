@@ -3,7 +3,7 @@ License: MIT License
 Copyright (c) 2024, Felipe Mohr Santos
 """
 
-from omni.isaac.lab.terrains import (
+from isaaclab.terrains import (
     TerrainGeneratorCfg,
     MeshPlaneTerrainCfg,
     HfRandomUniformTerrainCfg,

@@ -46,3 +46,20 @@ python scripts/rsl_rl/train.py --task Isaac-Quadruped-Go2-Blind-Rough-v0 --headl
 
 echo "#################### Training Isaac-Quadruped-Go2-Blind-Flat-v0 task..."
 python scripts/rsl_rl/train.py --task Isaac-Quadruped-Go2-Blind-Flat-v0 --headless --enable_cameras --video
+
+
+
+echo "#################### Training Isaac-Quadruped-Lite3-Vision-v0 task..."
+python scripts/rsl_rl/train.py --task Isaac-Quadruped-Lite3-Vision-v0 --headless --enable_cameras --video
+
+echo "#################### Training Isaac-Quadruped-Lite3-Vision-Stairs-v0 task..."
+python scripts/rsl_rl/train.py --task Isaac-Quadruped-Lite3-Vision-Stairs-v0 --headless --enable_cameras --video
+
+echo "#################### Training Isaac-Quadruped-Lite3-Blind-Stairs-v0 task..."
+python scripts/rsl_rl/train.py --task Isaac-Quadruped-Lite3-Blind-Stairs-v0 --headless --enable_cameras --video
+
+echo "#################### Training Isaac-Quadruped-Lite3-Blind-Rough-v0 task..."
+python scripts/rsl_rl/train.py --task Isaac-Quadruped-Lite3-Blind-Rough-v0 --headless --enable_cameras --video
+
+echo "#################### Training Isaac-Quadruped-Lite3-Blind-Flat-v0 task..."
+python scripts/rsl_rl/train.py --task Isaac-Quadruped-Lite3-Blind-Flat-v0 --headless --enable_cameras --video

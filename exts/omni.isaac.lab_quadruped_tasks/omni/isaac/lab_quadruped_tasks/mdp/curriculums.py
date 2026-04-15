@@ -10,8 +10,8 @@ from collections.abc import Sequence
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedRLEnv
-    from omni.isaac.lab.managers import SceneEntityCfg
+    from isaaclab.envs import ManagerBasedRLEnv
+    from isaaclab.managers import SceneEntityCfg
 
 
 def modify_event_parameter(

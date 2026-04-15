@@ -9,7 +9,7 @@ import torch
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedRLEnv
+    from isaaclab.envs import ManagerBasedRLEnv
 
 
 def invert_vel_cmd(env: ManagerBasedRLEnv, env_ids: torch.Tensor | None, command_name: str):

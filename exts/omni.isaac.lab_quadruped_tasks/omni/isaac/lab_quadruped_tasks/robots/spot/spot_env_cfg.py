@@ -3,7 +3,7 @@ License: MIT License
 Copyright (c) 2024, Felipe Mohr Santos
 """
 
-from omni.isaac.lab.utils import configclass
+from isaaclab.utils import configclass
 
 from omni.isaac.lab_quadruped_tasks.cfg.quadruped_env_cfg import QuadrupedEnvCfg
 from omni.isaac.lab_quadruped_tasks.cfg.quadruped_terrains_cfg import (
@@ -15,7 +15,7 @@ from omni.isaac.lab_quadruped_tasks.cfg.quadruped_terrains_cfg import (
     FULL_TERRAINS_PLAY_CFG,
 )
 
-from omni.isaac.lab_assets.spot import SPOT_CFG
+from isaaclab_assets.robots.spot import SPOT_CFG
 
 import math
 

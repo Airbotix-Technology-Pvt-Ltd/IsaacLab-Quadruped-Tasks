@@ -8,11 +8,11 @@ from __future__ import annotations
 import torch
 from typing import TYPE_CHECKING
 
-from omni.isaac.lab.assets import Articulation
-from omni.isaac.lab.managers import SceneEntityCfg
+from isaaclab.assets import Articulation
+from isaaclab.managers import SceneEntityCfg
 
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedRLEnv
+    from isaaclab.envs import ManagerBasedRLEnv
 
 
 def joint_powers_l1(env: ManagerBasedRLEnv, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> torch.Tensor:

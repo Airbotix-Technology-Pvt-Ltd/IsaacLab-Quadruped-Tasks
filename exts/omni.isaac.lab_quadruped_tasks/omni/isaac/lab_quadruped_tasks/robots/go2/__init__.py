@@ -42,7 +42,7 @@ go2_vision_stairs_runner_cfg.policy.critic_hidden_dims = [512, 256, 128]
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Flat-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindFlatEnvCfg,
@@ -52,7 +52,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Flat-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindFlatEnvCfg_PLAY,
@@ -66,7 +66,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Rough-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindRoughEnvCfg,
@@ -76,7 +76,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Rough-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindRoughEnvCfg_PLAY,
@@ -90,7 +90,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Stairs-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindStairsEnvCfg,
@@ -100,7 +100,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Blind-Stairs-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2BlindStairsEnvCfg_PLAY,
@@ -114,7 +114,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Vision-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2VisionEnvCfg,
@@ -124,7 +124,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Vision-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2VisionEnvCfg_PLAY,
@@ -138,7 +138,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Vision-Stairs-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2VisionStairsEnvCfg,
@@ -148,7 +148,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-Go2-Vision-Stairs-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": go2_env_cfg.Go2VisionStairsEnvCfg_PLAY,

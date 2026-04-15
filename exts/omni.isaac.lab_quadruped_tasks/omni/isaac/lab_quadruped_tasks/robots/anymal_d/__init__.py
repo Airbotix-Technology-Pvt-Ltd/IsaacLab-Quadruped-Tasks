@@ -42,7 +42,7 @@ anymal_d_vision_stairs_runner_cfg.policy.critic_hidden_dims = [512, 256, 128]
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Flat-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindFlatEnvCfg,
@@ -52,7 +52,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Flat-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindFlatEnvCfg_PLAY,
@@ -66,7 +66,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Rough-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindRoughEnvCfg,
@@ -76,7 +76,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Rough-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindRoughEnvCfg_PLAY,
@@ -90,7 +90,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Stairs-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindStairsEnvCfg,
@@ -100,7 +100,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Blind-Stairs-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDBlindStairsEnvCfg_PLAY,
@@ -114,7 +114,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Vision-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDVisionEnvCfg,
@@ -124,7 +124,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Vision-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDVisionEnvCfg_PLAY,
@@ -138,7 +138,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Vision-Stairs-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDVisionStairsEnvCfg,
@@ -148,7 +148,7 @@ gym.register(
 
 gym.register(
     id="Isaac-Quadruped-AnymalD-Vision-Stairs-Play-v0",
-    entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
         "env_cfg_entry_point": anymal_d_env_cfg.AnymalDVisionStairsEnvCfg_PLAY,
