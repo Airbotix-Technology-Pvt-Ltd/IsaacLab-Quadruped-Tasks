@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/e2a0a26e-0f06-4eb7-8478-d726585dac94)
 
 [![IsaacSim](https://img.shields.io/badge/IsaacSim-4.5-silver.svg)](https://docs.omniverse.nvidia.com/isaacsim/latest/overview.html)
-[![Isaac Lab](https://img.shields.io/badge/IsaacLab-2.x-silver)](https://isaac-sim.github.io/IsaacLab)
+[![Isaac Lab](https://img.shields.io/badge/IsaacLab-2.2.1-silver)](https://github.com/isaac-sim/IsaacLab/tree/f4aa17f87e2e5db5484f0b5974918573e8918ce2)
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://docs.python.org/3/whatsnew/3.11.html)
 [![Linux platform](https://img.shields.io/badge/platform-linux--64-orange.svg)](https://releases.ubuntu.com/22.04/)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/license/mit)
@@ -33,7 +33,22 @@ This repository contains an Isaac Lab extension with tasks for training quadrupe
 
 ## Installation
 
-1. Install **Isaac Sim 4.5** and **Isaac Lab 2.x** (follow [official docs](https://isaac-sim.github.io/IsaacLab)).
+### Pinned Dependencies (for reproducibility)
+
+| Dependency | Version | Commit |
+|---|---|---|
+| [Isaac Lab](https://github.com/isaac-sim/IsaacLab) | **2.2.1** | [`f4aa17f`](https://github.com/isaac-sim/IsaacLab/tree/f4aa17f87e2e5db5484f0b5974918573e8918ce2) |
+| Isaac Sim | **4.5** | — |
+| Python | **3.11** | — |
+| RSL-RL (`isaaclab_rl`) | **0.2.4** | — |
+| `isaaclab_assets` | **0.2.2** | — |
+
+1. Install **Isaac Sim 4.5** and **Isaac Lab 2.2.1** at the pinned commit (follow [official docs](https://isaac-sim.github.io/IsaacLab)):
+
+```bash
+git clone https://github.com/isaac-sim/IsaacLab.git
+cd IsaacLab && git checkout f4aa17f87e2e5db5484f0b5974918573e8918ce2
+```
 
 2. Clone this repo and install the extension:
 
