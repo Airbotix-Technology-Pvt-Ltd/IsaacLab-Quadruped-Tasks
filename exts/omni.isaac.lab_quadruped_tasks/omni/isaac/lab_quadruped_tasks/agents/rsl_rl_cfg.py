@@ -14,10 +14,12 @@ from isaaclab_rl.rsl_rl import (
 @configclass
 class QuadrupedPPORunnerCfg(RslRlOnPolicyRunnerCfg):
     num_steps_per_env = 24
-    max_iterations = 8000
+    max_iterations = 10000
     save_interval = 500
     experiment_name = "quadruped"
     empirical_normalization = False
+    # Clip observations to prevent NaN cascade when a joint/sensor blows up
+    clip_obs = 100.0
     policy = RslRlPpoActorCriticCfg(
         class_name="ActorCritic",
         init_noise_std=1.0,
@@ -37,5 +39,5 @@ class QuadrupedPPORunnerCfg(RslRlOnPolicyRunnerCfg):
         gamma=0.99,
         lam=0.95,
         desired_kl=0.01,
-        max_grad_norm=1.0,
+        max_grad_norm=0.5,
     )
