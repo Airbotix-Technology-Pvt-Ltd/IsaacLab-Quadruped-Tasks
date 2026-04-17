@@ -137,9 +137,16 @@ class Lite3BaseEnvCfg(QuadrupedEnvCfg):
         self.rewards.pen_undesired_contacts.weight = -0.25
 
         # Remove base_lin_vel from observations: real Lite3 hardware does not
-        # expose linear velocity → SDK sends 45-dim obs, not 48.
-        # This matches the official Deep Robotics rl_training config.
+        # expose linear velocity → SDK sends 45-dim obs (blind), not 48.
+        # This matches the physical robot capabilities.
         self.observations.policy.base_lin_vel = None  # type: ignore
+
+        # Ensure observation scales are identity (1.0) for Sim2Real
+        self.observations.policy.base_ang_vel.scale = 1.0
+        self.observations.policy.proj_gravity.scale = 1.0
+        self.observations.policy.joint_pos.scale = 1.0
+        self.observations.policy.joint_vel.scale = 1.0
+        self.observations.policy.vel_command.scale = 1.0
 
 
 @configclass
